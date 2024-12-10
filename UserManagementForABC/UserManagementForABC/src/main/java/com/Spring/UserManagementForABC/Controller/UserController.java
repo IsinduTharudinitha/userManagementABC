@@ -33,7 +33,7 @@ public class UserController {
     }
 
     @PostMapping("/add")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
      public ResponseEntity<UserResource> createUser(UserResource userResource) {
         UserResource userResourceResult =userService.createUser(userResource);
         return ResponseEntity.ok(userResourceResult);

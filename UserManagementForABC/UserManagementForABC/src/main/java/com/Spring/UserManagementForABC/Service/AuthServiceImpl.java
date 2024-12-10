@@ -27,7 +27,7 @@ public class AuthServiceImpl implements AuthService {
     @Autowired
     private JWTUtils jwtUtils;
 
-    @Value("${application.security.access-token-expiration-in-minutes}")
+    @Value("30")
     private Integer accessTokenExpirationInMinutes;
 
 
@@ -86,7 +86,7 @@ public class AuthServiceImpl implements AuthService {
     private Cookie createCookie(String tokenType, String tokenValue, int expiryInSeconds) {
         jakarta.servlet.http.Cookie cookie = new jakarta.servlet.http.Cookie(tokenType, tokenValue);
         cookie.setHttpOnly(true);
-        cookie.setSecure(true);  // Make sure to set this to true in production
+        cookie.setSecure(false);
         cookie.setMaxAge(expiryInSeconds);
         cookie.setPath("/");  // Set path to '/' so cookie is sent for all requests
         return cookie;

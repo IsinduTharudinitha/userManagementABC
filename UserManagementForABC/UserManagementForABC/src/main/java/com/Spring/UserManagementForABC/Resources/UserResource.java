@@ -25,4 +25,6 @@ public class UserResource {
     private String phoneNumber;
 
     private Role role;
+
+
 }

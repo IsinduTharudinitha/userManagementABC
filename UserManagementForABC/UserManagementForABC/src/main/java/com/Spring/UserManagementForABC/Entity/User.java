@@ -33,4 +33,20 @@ public class User {
     @JoinColumn(name = "role_name", referencedColumnName = "name")
     private Role role;
 
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public Role getRole() {
+        return role;
+    }
 }

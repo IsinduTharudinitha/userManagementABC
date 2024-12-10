@@ -1,8 +1,8 @@
 
 INSERT INTO roles (id, name) VALUES
          (1, 'ADMIN'),
-         (2, 'USER'),
-        (3, 'MANAGER');
+         (2, 'USER');
+
 
 
 INSERT INTO permissions (id, name) VALUES
@@ -24,7 +24,3 @@ INSERT INTO role_permission (role_id, permission_id) VALUES
                 (2, 2); -- USER: WRITE_PRIVILEGES
 
 
-INSERT INTO role_permission (role_id, permission_id) VALUES
-                (3, 1), -- MANAGER: READ_PRIVILEGES
-                (3, 2), -- MANAGER: WRITE_PRIVILEGES
-                (3, 3); -- MANAGER: DELETE_PRIVILEGES
