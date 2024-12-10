@@ -28,6 +28,9 @@ public class User {
 
     private String phoneNumber;
 
-    private RoleType role;
+
+    @ManyToOne
+    @JoinColumn(name = "role_name", referencedColumnName = "name")
+    private Role role;
 
 }

@@ -1,5 +1,6 @@
 package com.Spring.UserManagementForABC.Resources;
 
+import com.Spring.UserManagementForABC.Entity.Role;
 import com.Spring.UserManagementForABC.Enum.RoleType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,5 +24,5 @@ public class UserResource {
 
     private String phoneNumber;
 
-    private RoleType role;
+    private Role role;
 }
