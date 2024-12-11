@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -25,6 +26,7 @@ public class UserResource {
     private String phoneNumber;
 
     private Role role;
+
 
 
 }
