@@ -32,6 +32,7 @@ public class RoleService {
     public Set<Permission> getPermissionsByRole(Long roleId) {
         Role role = roleRepository.findById(roleId)
                 .orElseThrow(() -> new SystemException(ErrorCode.ROLE_NOT_FOUND));
+        System.out.println(role);
         return role.getPermissions();
     }
 

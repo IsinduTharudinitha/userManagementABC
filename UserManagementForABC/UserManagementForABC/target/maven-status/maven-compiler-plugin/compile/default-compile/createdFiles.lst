@@ -7,8 +7,8 @@ com\Spring\UserManagementForABC\Repository\RoleRepository.class
 com\Spring\UserManagementForABC\Service\AuthService.class
 com\Spring\UserManagementForABC\Config\SecurityConfig.class
 com\Spring\UserManagementForABC\Exception\ErrorCode.class
-com\Spring\UserManagementForABC\Resources\UserResource$UserResourceBuilder.class
 com\Spring\UserManagementForABC\Exception\SystemException.class
+com\Spring\UserManagementForABC\Resources\UserResource$Builder.class
 com\Spring\UserManagementForABC\Controller\RolePermissionController.class
 com\Spring\UserManagementForABC\Filter\JWTFilter.class
 com\Spring\UserManagementForABC\Service\RoleService.class
@@ -20,5 +20,8 @@ com\Spring\UserManagementForABC\Service\JWTUtils.class
 com\Spring\UserManagementForABC\Entity\Permission.class
 com\Spring\UserManagementForABC\Repository\UserRepository.class
 com\Spring\UserManagementForABC\Resources\AuthRequest.class
+com\Spring\UserManagementForABC\Service\UserDetailsServiceImpl.class
 com\Spring\UserManagementForABC\Service\UserService.class
+com\Spring\UserManagementForABC\UserManagementForAbcApplication.class
 com\Spring\UserManagementForABC\Controller\AuthController.class
+com\Spring\UserManagementForABC\Service\UserServiceImpl.class

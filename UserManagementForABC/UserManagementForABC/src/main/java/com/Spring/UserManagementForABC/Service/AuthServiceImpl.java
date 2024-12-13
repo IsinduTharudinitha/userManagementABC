@@ -1,5 +1,6 @@
 package com.Spring.UserManagementForABC.Service;
 
+import com.Spring.UserManagementForABC.Entity.Role;
 import com.Spring.UserManagementForABC.Enum.TokenType;
 import com.Spring.UserManagementForABC.Exception.ErrorCode;
 import com.Spring.UserManagementForABC.Exception.SystemException;
@@ -61,9 +62,9 @@ public class AuthServiceImpl implements AuthService {
                         accessTokenExpirationInMillis
                 );
 
-                // Add token to the response as a cookie
-                servletResponse.addCookie(createCookie(TokenType.ACCESS_TOKEN.name(), accessToken, accessTokenExpirationInMinutes * 60));
-
+                servletResponse.setContentType("application/json");
+                servletResponse.getWriter().write("{\"accessToken\":\"" + accessToken + "\"}");
+                servletResponse.getWriter().flush();
                 return;
             }
 

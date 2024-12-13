@@ -19,7 +19,7 @@ public interface UserRepository extends JpaRepository<User,Long>, JpaSpecificati
             "OR LOWER(u.email) LIKE LOWER(CONCAT('%', :query, '%'))")
     List<User> searchByQuery(@Param("query") String query);
 
-    Optional<User> findByUsername(String username);
+    Optional<User> findByFirstname(String firstname);
     Optional<User> findByEmail(String email);
     boolean existsByEmail(String email);
     boolean existsByEmailAndIdNot(String email, Long id);

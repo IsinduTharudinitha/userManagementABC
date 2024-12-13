@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/UserManagementForABC/UserManagementForABC/UserManagementForABC.iml" filepath="$PROJECT_DIR$/UserManagementForABC/UserManagementForABC/UserManagementForABC.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/userManagementABC.iml" filepath="$PROJECT_DIR$/.idea/userManagementABC.iml" />
     </modules>
   </component>
