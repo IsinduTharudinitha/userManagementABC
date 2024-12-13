@@ -65,7 +65,7 @@ public class AuthServiceImpl implements AuthService {
                 servletResponse.setContentType("application/json");
                 servletResponse.getWriter().write("{\"accessToken\":\"" + accessToken + "\"}");
                 servletResponse.getWriter().flush();
-                return;
+                return ;
             }
 
             throw new SystemException(ErrorCode.INVALID_CREDENTIALS);
@@ -75,6 +75,12 @@ public class AuthServiceImpl implements AuthService {
         }
 
     }
+
+    @Override
+    public void logout(HttpServletResponse servletResponse) throws SystemException {
+
+    }
+
 
     private boolean isNullOrEmpty(String str) {
         return str == null || str.trim().isEmpty();
