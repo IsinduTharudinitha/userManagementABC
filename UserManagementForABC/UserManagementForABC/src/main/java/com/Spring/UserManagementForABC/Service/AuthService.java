@@ -7,5 +7,5 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public interface AuthService {
     void login(HttpServletRequest servletRequest, HttpServletResponse servletResponse, AuthRequest loginRequest) throws SystemException;
-    void logout(HttpServletResponse servletResponse) throws SystemException;
+    void logout(String accessToken) throws SystemException;
 }

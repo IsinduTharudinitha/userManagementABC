@@ -33,6 +33,13 @@ public class JWTFilter extends OncePerRequestFilter {
         String header = request.getHeader("Authorization");
         if (header != null && header.startsWith("Bearer ")) {
             String token = header.substring(7);
+
+            if (jwtUtils.isTokenBlacklisted(token)) {
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                response.getWriter().write("Token is blacklisted");
+                return;
+            }
+
             Claims claims = jwtUtils.extractClaims(token);
             if (claims != null) {
                 String username = claims.getSubject();

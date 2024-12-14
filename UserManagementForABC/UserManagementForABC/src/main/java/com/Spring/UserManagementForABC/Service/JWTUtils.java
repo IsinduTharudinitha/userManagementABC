@@ -12,12 +12,15 @@ import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 @Component
 public class JWTUtils {
      private final SecretKey Key;
      private long expiration = 60 * 60 * 1000;
+    private final Map<String, Long> tokenBlacklist = new ConcurrentHashMap<>();
 
 
     public JWTUtils(){
@@ -51,6 +54,27 @@ public class JWTUtils {
                 .signWith(SignatureAlgorithm.HS512, Key)
                 .compact();
     }
+
+    public void blacklistToken(String token) {
+        long expiration = getExpirationTimeFromToken(token);
+        tokenBlacklist.put(token, expiration);
+    }
+
+    public boolean isTokenBlacklisted(String token) {
+        return tokenBlacklist.containsKey(token) && tokenBlacklist.get(token) > System.currentTimeMillis();
+    }
+
+    private long getExpirationTimeFromToken(String token) {
+        Claims claims = Jwts.parserBuilder()
+                .setSigningKey(Key)
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+        return claims.getExpiration().getTime();
+    }
+
+
+
 
     public String extractUserEmail(String token) {
         return extractClaims(token).getSubject(); // Subject is email

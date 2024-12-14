@@ -77,7 +77,19 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public void logout(HttpServletResponse servletResponse) throws SystemException {
+    public void logout(String accessToken) throws SystemException {
+        if (accessToken == null || accessToken.trim().isEmpty()) {
+            throw new SystemException(ErrorCode.INVALID_TOKEN);
+        }
+
+        try {
+            // Blacklist the token
+            jwtUtils.blacklistToken(accessToken);
+
+            System.out.println("User logged out successfully");
+        } catch (Exception ex) {
+            throw new SystemException(ErrorCode.LOGOUT_FAILED);
+        }
 
     }
 
