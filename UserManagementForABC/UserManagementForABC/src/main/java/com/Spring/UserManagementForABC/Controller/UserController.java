@@ -17,12 +17,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-//    @GetMapping("/search")
-//    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
-//    public ResponseEntity<List<UserResource>> searchUsers(@RequestParam("query") String query) {
-//        List<UserResource> users = userService.searchUsers(query);
-//        return ResponseEntity.ok(users);
-//    }
+    @GetMapping("/search")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
+    public ResponseEntity<List<UserResource>> searchUsers(@RequestParam("query") String query) {
+        List<UserResource> users = userService.searchUsers(query);
+        return ResponseEntity.ok(users);
+    }
 
 
     @GetMapping("/{id}")
