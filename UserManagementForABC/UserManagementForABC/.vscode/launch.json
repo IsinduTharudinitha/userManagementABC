@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-UserManagementForAbcApplication<UserManagementForABC>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.Spring.UserManagementForABC.UserManagementForAbcApplication",
+            "projectName": "UserManagementForABC",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
